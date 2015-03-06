@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mx.edu.itschapala.sistemas.biblioteca.dao;
+package mx.edu.itschapala.sistemas.biblioteca.bl;
 
 import java.util.List;
 import javax.ejb.Local;
@@ -14,20 +14,16 @@ import mx.edu.itschapala.sistemas.biblioteca.modelo.Empleados;
  * @author Admin
  */
 @Local
-public interface EmpleadosDaoLocal {
+public interface EmpleadoBLLocal {
 
-    void crear(Empleados empleados);
+    boolean registrar(Empleados empleado);
 
-    void editar(Empleados empleados);
+    boolean editar(Empleados empleados);
 
-    void remover(Empleados empleados);
+    boolean eliminar(Empleados empleado);
 
-    Empleados buscarPorId(Object id);
+    Empleados getPorId(int id);
 
-    List<Empleados> buscarTodo();
-
-    List<Empleados> buscarRango(int[] range);
-
-    int contar();
-
+    List<Empleados> getLista(int empleado);
+    
 }
